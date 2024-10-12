@@ -1,0 +1,39 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = 'com.yanisalfian.flutterphonedirectcaller' // Corrected namespace
+    compileSdk = 34 // Set explicitly or keep flutter.compileSdkVersion if correctly configured
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // Set explicitly
+    }
+
+    defaultConfig {
+        applicationId = "com.example.lifeflow_project"
+        minSdk = 23
+        targetSdk = 31 // Set explicitly or keep flutter.targetSdkVersion if correctly configured
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
